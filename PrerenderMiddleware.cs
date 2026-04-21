@@ -56,6 +56,7 @@ public class PrerenderMiddleware : IMiddleware
                 "User-Agent", context.Request.Headers["User-Agent"].ToString());
             if (!string.IsNullOrWhiteSpace(_options.Token))
                 request.Headers.TryAddWithoutValidation("X-Prerender-Token", _options.Token);
+            request.Headers.TryAddWithoutValidation("X-Prerender-Int-Type", "AspNetCore");
 
             using var response = await client.SendAsync(request, context.RequestAborted);
             context.Response.StatusCode = (int)response.StatusCode;
