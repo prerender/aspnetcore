@@ -6,6 +6,8 @@ namespace Prerender.AspNetCore;
 
 public class PrerenderMiddleware : IMiddleware
 {
+    public const string Version = "1.0.0";
+
     private static readonly string[] CrawlerUserAgents =
     [
         "googlebot", "yahoo", "bingbot", "baiduspider",
@@ -57,6 +59,8 @@ public class PrerenderMiddleware : IMiddleware
             if (!string.IsNullOrWhiteSpace(_options.Token))
                 request.Headers.TryAddWithoutValidation("X-Prerender-Token", _options.Token);
             request.Headers.TryAddWithoutValidation("X-Prerender-Int-Type", "AspNetCore");
+            request.Headers.TryAddWithoutValidation("X-Prerender-Int-Version", Version);
+            request.Headers.TryAddWithoutValidation("X-Prerender-Request-Id", Guid.NewGuid().ToString());
 
             using var response = await client.SendAsync(request, context.RequestAborted);
             context.Response.StatusCode = (int)response.StatusCode;
