@@ -16,6 +16,14 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Setup Node (for contract mock server)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch contract mock server
+        run: curl -fsSL -o mock-server.mjs https://raw.githubusercontent.com/prerender/integration-contract/main/mock-server.mjs
+
       - name: Restore dependencies
         run: dotnet restore tests/Prerender.AspNetCore.Tests.csproj
 
