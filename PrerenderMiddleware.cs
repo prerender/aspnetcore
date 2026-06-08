@@ -15,6 +15,7 @@ public class PrerenderMiddleware : IMiddleware
         "embedly", "quora link preview", "showyoubot", "outbrain",
         "pinterest", "slackbot", "w3c_validator", "perplexity",
         "oai-searchbot", "chatgpt-user", "gptbot", "claudebot", "amazonbot",
+        "iframely",
     ];
 
     private static readonly string[] ExtensionsToIgnore =
