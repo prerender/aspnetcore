@@ -81,6 +81,19 @@ public class PrerenderMiddlewareTests
     }
 
     [Fact]
+    public async Task BotRequest_FontAsset_PassesThrough()
+    {
+        using var server = CreateServer();
+        var client = server.CreateClient();
+        client.DefaultRequestHeaders.Add("User-Agent", BotUserAgent);
+
+        var response = await client.GetAsync("/fonts/inter.woff2");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("normal response", await response.Content.ReadAsStringAsync());
+    }
+
+    [Fact]
     public async Task EscapedFragment_TriggersPrerender()
     {
         using var server = CreateServer();
