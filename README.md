@@ -2,7 +2,7 @@
 
 ASP.NET Core middleware for [Prerender.io](https://prerender.io). Intercepts requests from bots and crawlers and serves prerendered HTML, so your JavaScript-rendered app is fully indexable by search engines and social media scrapers.
 
-Compatible with **ASP.NET Core 8+** and **.NET 8+**.
+Compatible with **ASP.NET Core 10+** and **.NET 10+**.
 
 ## Installation
 
