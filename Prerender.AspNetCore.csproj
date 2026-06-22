@@ -9,7 +9,7 @@
     <Description>ASP.NET Core middleware for prerendering JavaScript-rendered pages for SEO via Prerender.io</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/prerender/integrations</RepositoryUrl>
+    <RepositoryUrl>https://github.com/prerender/aspnetcore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
