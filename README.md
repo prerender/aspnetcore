@@ -1,4 +1,6 @@
-# prerender-aspnetcore
+# Prerender.AspNetCore
+
+[![NuGet](https://img.shields.io/nuget/v/Prerender.AspNetCore)](https://www.nuget.org/packages/Prerender.AspNetCore)
 
 ASP.NET Core middleware for [Prerender.io](https://prerender.io). Intercepts requests from bots and crawlers and serves prerendered HTML, so your JavaScript-rendered app is fully indexable by search engines and social media scrapers.
 
